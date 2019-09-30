@@ -1,8 +1,8 @@
 {
-    "name": "",
+    "name": "firstdatascraper",
     "version": "0.0.1",
-    "homepage": "",
-    "description": "",
+    "homepage": "https://github.com/merellois/Coding_Year3",
+    "description": "Merel's datascraper",
     "author": "Merel Meijer",
     "main": "app.js",
     "dependencies": {
