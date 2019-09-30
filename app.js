@@ -3,7 +3,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var fs = require('fs');
 
-var port = 2100;
+var port = 8000;
 var app = express();
 
 app.get('/wikipedia', function (req,res){
