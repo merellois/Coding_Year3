@@ -63,6 +63,34 @@ app.get('/imdb', function (req,res){
   });
 });
 
+app.get('/chinatownology', function (req,res){
+
+  var url = "https://www.chinatownology.com";
+
+  request(url, function(error, response, html){
+    if(!error){
+
+
+      var wiki_data = {
+        title: '',
+        img: '',
+        paragraph: '',
+      };
+
+      var $ = cheerio.load(html);
+
+      $ ('#content').filter(function(){
+        wiki_data.title = $(this).find('h1').text();
+        wiki_data.img = $(this).find('img:nth-of-type(2)').first().attr('src');
+        wiki_data.paragraph = $(this).find('p').first().text();
+      });
+
+      res.send(wiki_data);
+    }
+
+  });
+});
+
 app.listen(port);
 console.log('Magic happens on port' + port);
 exports = module.exports = app;
